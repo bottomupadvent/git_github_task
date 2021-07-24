@@ -1,0 +1,39 @@
+mkdir git_session_basics
+cd git_session_basics
+
+git init
+touch README.md
+git add README.md
+git commit -m "Initial commit - Added README.md"
+git remote add origin https://github.com/bottomupadvent/git_github_task.git
+touch file1.txt file2.txt file3.txt
+
+git checkout -b Dev
+git add file1.txt
+git commit -m "file1.txt added to Dev branch"
+
+git checkout -b Test
+git add file2.txt file3.txt
+git commit -m "file2.txt and file3.txt added to Test branch"
+
+git checkout Dev
+echo "Modified file1.txt" > file1.txt
+git status
+git add file1.txt
+git commit -m "file1.txt modified"
+
+git checkout master
+git merge Dev
+git merge Test
+
+git push -u origin master
+
+
+
+git clone https://github.com/bottomupadvent/git_github_task.git
+cd git_github_task
+touch Solution.txt
+notepad Solution.txt
+git add Solution.txt
+git commit -m "Added Solution.txt"
+git push -u origin master
